@@ -20,19 +20,19 @@ public class ShoppingSystem {
         products.add(new Product("P09", "Monitor", 150.0, 10));
         products.add(new Product("P10", "Printer", 120.0, 8));
 
-        // Admins adding products
+
         for (Product product : products) {
             admin1.addProduct(product);
         }
 
-        // Create Customers
+
         Customer customer1 = new Customer(101, "Charlie", "charlie@customer.com", "123 Elm Street");
         Customer customer2 = new Customer(102, "Diana", "diana@customer.com", "456 Oak Avenue");
         Customer customer3 = new Customer(103, "Ethan", "ethan@customer.com", "789 Pine Road");
         Customer customer4 = new Customer(104, "Fiona", "fiona@customer.com", "321 Maple Lane");
         Customer customer5 = new Customer(105, "George", "george@customer.com", "654 Birch Boulevard");
 
-        // Place Orders
+
         customer1.placeOrder(products.get(0), 2, "Credit Card");
         customer1.placeOrder(products.get(1), 1, "PayPal");
         customer2.placeOrder(products.get(2), 5, "Credit Card");
@@ -41,16 +41,16 @@ public class ShoppingSystem {
         customer4.placeOrder(products.get(9), 3, "PayPal");
         customer5.placeOrder(products.get(8), 2, "Credit Card");
 
-        // Attempt to place an order exceeding stock
+
         customer1.placeOrder(products.get(0), 20, "Credit Card");
 
-        // Admin updates stock for a product
+
         admin2.updateStock("P01", 15);
 
-        // Admin removes a product
+
         admin1.removeProduct("P06");
 
-        // Display all users
+
         System.out.println("\nDisplaying All Users:");
         admin1.displayDetails();
         admin2.displayDetails();
@@ -60,13 +60,13 @@ public class ShoppingSystem {
         customer4.displayDetails();
         customer5.displayDetails();
 
-        // Display all products
+
         System.out.println("\nDisplaying All Products:");
         for (Product product : products) {
             product.displayDetails();
         }
 
-        // Display all orders
+
         System.out.println("\nDisplaying Orders for Customers:");
         for (Customer customer : List.of(customer1, customer2, customer3, customer4, customer5)) {
             System.out.println("\nOrders for Customer: " + customer.name);
